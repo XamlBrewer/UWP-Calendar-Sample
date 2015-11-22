@@ -3,19 +3,40 @@
     using Mvvm;
     using Mvvm.Services;
     using System;
+    using System.Collections.Generic;
     using System.Windows.Input;
     using Windows.ApplicationModel.Appointments;
 
     class MainPageViewModel : ViewModelBase
     {
+        private string selectedAppointmentId;
+
         public MainPageViewModel()
         {
             this.OpenCommand = new DelegateCommand(this.Open_Executed);
             this.AddCommand = new DelegateCommand(this.Add_Executed);
+            this.CleanCommand = new DelegateCommand(this.Clean_Executed);
+        }
+
+        public List<String> AppointmentIds { get { return Calendar.AppointmentIds; } }
+
+        public string SelectedAppointmentId
+        {
+            get { return selectedAppointmentId; }
+            set {
+                this.SetProperty(ref selectedAppointmentId, value);
+                this.OnPropertyChanged("HasSelection");
+            }
+        }
+
+        public bool HasSelection
+        {
+            get { return !string.IsNullOrEmpty(selectedAppointmentId); }
         }
 
         public ICommand OpenCommand { get; private set; }
         public ICommand AddCommand { get; private set; }
+        public ICommand CleanCommand { get; private set; }
 
         private async void Open_Executed()
         {
@@ -38,7 +59,7 @@
 
                 if (appointmentId != String.Empty)
                 {
-                    Calendar.AddAppointmentId(appointmentId);
+                    this.OnPropertyChanged("AppointmentIds");
                     Toast.ShowInfo("Thanks for saving the appointment.");
                 }
                 else
@@ -51,6 +72,12 @@
                 // I get here way too often...
                 Toast.ShowError(ex.Message);
             }
+        }
+
+        private async void Clean_Executed()
+        {
+            await Calendar.CleanUp();
+            this.OnPropertyChanged("AppointmentIds");
         }
     }
 }

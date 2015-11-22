@@ -1,13 +1,30 @@
-﻿<Page
-    x:Class="XamlBrewer.Uwp.CalendarSample.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.Uwp.CalendarSample"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.Uwp.CalendarSample.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.Uwp.CalendarSample"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
     <Grid Background="Transparent">
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                    Background="Transparent"
+                    HorizontalAlignment="Right">
+            <AppBarButton Command="{Binding GotoCommand}"
+                          Icon="View"
+                          Content="Open"
+                          IsEnabled="{Binding HasSelection}" />
+            <AppBarButton Command="{Binding DeleteCommand}"
+                          Icon="Delete"
+                          Content="Delete"
+                          IsEnabled="{Binding HasSelection}" />
+        </StackPanel>
+        <ListView ItemsSource="{Binding AppointmentIds}"
+                  SelectedItem="{Binding SelectedAppointmentId, Mode=TwoWay}"
+                  Grid.Row="1" />
     </Grid>
 </Page>

@@ -22,6 +22,7 @@ namespace XamlBrewer.Uwp.CalendarSample
         private MainPageViewModel vm;
         private MenuItem openItem;
         private MenuItem addItem;
+        private MenuItem cleanItem;
 
         public MainPage()
         {
@@ -30,20 +31,24 @@ namespace XamlBrewer.Uwp.CalendarSample
             vm = new MainPageViewModel();
             this.DataContext = vm;
 
-            openItem = new MenuItem() { Glyph = "\uEA89", Text = "Open", Command = vm.OpenCommand };
+            openItem = new MenuItem() { Glyph = "\uE163", Text = "Open", Command = vm.OpenCommand };
             addItem = new MenuItem() { Glyph = "\uE8D1", Text = "Add", Command = vm.AddCommand };
+            cleanItem = new MenuItem() { Glyph = "\uEA99", Text = "Cleanup", Command = vm.CleanCommand };
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             vm.Menu.Add(openItem);
             vm.Menu.Add(addItem);
+            vm.Menu.Add(cleanItem);
             base.OnNavigatedTo(e);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             vm.Menu.Remove(openItem);
+            vm.Menu.Remove(addItem);
+            vm.Menu.Remove(cleanItem);
             base.OnNavigatedFrom(e);
         }
     }

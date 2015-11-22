@@ -96,8 +96,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mvvm\BooleanToVisibilityConverter.cs" />
     <Compile Include="Services\Calendar.cs" />
-    <Compile Include="Services\Theming.cs" />
+    <Compile Include="Services\Theme.cs" />
     <Compile Include="Services\Toast.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">

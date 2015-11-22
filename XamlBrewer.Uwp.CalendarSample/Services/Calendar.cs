@@ -26,10 +26,6 @@
         {
             var id = await AppointmentManager.ShowAddAppointmentAsync(appt, selection, Placement.Default);
             AddAppointmentId(id);
-            if (String.IsNullOrEmpty(id))
-            {
-                Toast.ShowInfo("The appointment was not added.");
-            }
 
             return id;
         }

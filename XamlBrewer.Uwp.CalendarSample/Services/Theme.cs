@@ -4,11 +4,11 @@ using Windows.UI.ViewManagement;
 
 namespace Mvvm.Services
 {
-    public class Theming
+    public class Theme
     {
         // Call this in App OnLaunched.
         // Requires references to Windows Desktop and Windows Mobile Extensions for the UWP.
-        public static void ApplyThemeToContainer()
+        public static void ApplyToContainer()
         {
             //PC customization
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
