@@ -35,12 +35,18 @@
             await AppointmentManager.ShowAppointmentDetailsAsync(appointmentId);
         }
 
-        public async static Task Delete(string appointmentId, bool ignoreExceptions = false)
+        public async static Task<bool> Delete(string appointmentId, bool ignoreExceptions = false)
         {
             var selection = new Rect(new Point(Window.Current.Bounds.Width / 2, Window.Current.Bounds.Height / 2), new Size());
             try
             {
                 var success = await AppointmentManager.ShowRemoveAppointmentAsync(appointmentId, selection);
+                if (success)
+                {
+                    RemoveAppointmentId(appointmentId);
+                }
+
+                return success;
             }
             catch (Exception)
             {
@@ -48,6 +54,9 @@
                 {
                     throw;
                 }
+
+                RemoveAppointmentId(appointmentId);
+                return true;
             }
         }
 

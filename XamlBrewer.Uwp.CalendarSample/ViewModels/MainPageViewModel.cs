@@ -15,6 +15,8 @@
         {
             this.OpenCommand = new DelegateCommand(this.Open_Executed);
             this.AddCommand = new DelegateCommand(this.Add_Executed);
+            this.GoToCommand = new DelegateCommand(this.GoTo_Executed);
+            this.DeleteCommand = new DelegateCommand(this.Delete_Executed);
             this.CleanCommand = new DelegateCommand(this.Clean_Executed);
         }
 
@@ -36,6 +38,8 @@
 
         public ICommand OpenCommand { get; private set; }
         public ICommand AddCommand { get; private set; }
+        public ICommand GoToCommand { get; private set; }
+        public ICommand DeleteCommand { get; private set; }
         public ICommand CleanCommand { get; private set; }
 
         private async void Open_Executed()
@@ -72,6 +76,17 @@
                 // I get here way too often...
                 Toast.ShowError(ex.Message);
             }
+        }
+
+        private async void GoTo_Executed()
+        {
+            await Calendar.Display(SelectedAppointmentId);
+        }
+
+        private async void Delete_Executed()
+        {
+            await Calendar.Delete(SelectedAppointmentId);
+            this.OnPropertyChanged("AppointmentIds");
         }
 
         private async void Clean_Executed()

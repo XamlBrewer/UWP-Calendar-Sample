@@ -14,7 +14,7 @@
         <StackPanel Orientation="Horizontal"
                     Background="Transparent"
                     HorizontalAlignment="Right">
-            <AppBarButton Command="{Binding GotoCommand}"
+            <AppBarButton Command="{Binding GoToCommand}"
                           Icon="View"
                           Content="Open"
                           IsEnabled="{Binding HasSelection}" />
