@@ -96,6 +96,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\Calendar.cs" />
     <Compile Include="Services\Theming.cs" />
     <Compile Include="Services\Toast.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

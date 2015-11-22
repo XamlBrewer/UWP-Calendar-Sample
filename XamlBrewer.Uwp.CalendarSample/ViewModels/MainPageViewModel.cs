@@ -3,14 +3,8 @@
     using Mvvm;
     using Mvvm.Services;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows.Input;
     using Windows.ApplicationModel.Appointments;
-    using Windows.Foundation;
-    using Windows.UI.Popups;
 
     class MainPageViewModel : ViewModelBase
     {
@@ -27,7 +21,7 @@
         {
             var tomorrow = DateTime.Now.AddDays(1);
             var duration = TimeSpan.FromHours(24);
-            await AppointmentManager.ShowTimeFrameAsync(tomorrow, duration);
+            await Calendar.Open(tomorrow, duration);
             Toast.ShowInfo("Your calendar app should be open now.");
         }
 
@@ -40,12 +34,11 @@
 
             try
             {
-                Rect rect = new Rect(0, 0, 0, 0);
-
-                var appointmentId = await AppointmentManager.ShowAddAppointmentAsync(appointment, rect, Placement.Default);
+                var appointmentId = await Calendar.Add(appointment);
 
                 if (appointmentId != String.Empty)
                 {
+                    Calendar.AddAppointmentId(appointmentId);
                     Toast.ShowInfo("Thanks for saving the appointment.");
                 }
                 else
