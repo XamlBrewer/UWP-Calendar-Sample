@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Mvvm\BooleanToVisibilityConverter.cs" />
     <Compile Include="Services\Calendar.cs" />
+    <Compile Include="Services\Log.cs" />
     <Compile Include="Services\Theme.cs" />
     <Compile Include="Services\Toast.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />

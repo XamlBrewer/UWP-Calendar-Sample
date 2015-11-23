@@ -54,9 +54,11 @@
                 {
                     throw;
                 }
-
-                RemoveAppointmentId(appointmentId);
-                return true;
+                else
+                {
+                    RemoveAppointmentId(appointmentId);
+                    return true;
+                }
             }
         }
 

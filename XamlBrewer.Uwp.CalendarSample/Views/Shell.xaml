@@ -118,15 +118,15 @@
                     </Frame>
 
                     <!-- SplitViewOpener -->
-                    <!-- Commented out, because blocks UI -->
-                    <!--<Grid ManipulationMode="TranslateX"
+                    <!-- Comment out when it blocks the UI -->
+                    <Grid ManipulationMode="TranslateX"
                           ManipulationCompleted="SplitViewOpener_ManipulationCompleted"
-                          Width="150"
+                          Width="120"
                           Margin="0"
                           Background="Transparent"
                           HorizontalAlignment="Left"
                           VerticalAlignment="Stretch">
-                    </Grid>-->
+                    </Grid>
 
                     <!-- Lua Logo -->
                     <StackPanel Orientation="Horizontal"

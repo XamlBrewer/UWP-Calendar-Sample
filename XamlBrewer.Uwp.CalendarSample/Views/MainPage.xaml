@@ -25,6 +25,9 @@
         </StackPanel>
         <ListView ItemsSource="{Binding AppointmentIds}"
                   SelectedItem="{Binding SelectedAppointmentId, Mode=TwoWay}"
-                  Grid.Row="1" />
+                  Grid.Row="1" Margin="100 0 0 0"
+                  HorizontalAlignment="Left"
+                  HorizontalContentAlignment="Left"
+                  FontSize="12" />
     </Grid>
 </Page>
