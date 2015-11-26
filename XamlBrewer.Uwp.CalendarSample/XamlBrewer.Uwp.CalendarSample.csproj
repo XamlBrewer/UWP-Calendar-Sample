@@ -118,7 +118,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="XamlBrewer.Uwp.CalendarSample_StoreKey.pfx" />
     <None Include="XamlBrewer.Uwp.CalendarSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
