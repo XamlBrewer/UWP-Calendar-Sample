@@ -92,6 +92,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="XamlBrewer.Uwp.CalendarSample_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -118,8 +119,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="XamlBrewer.Uwp.CalendarSample_StoreKey.pfx" />
-    <None Include="XamlBrewer.Uwp.CalendarSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\peanuts.png" />
