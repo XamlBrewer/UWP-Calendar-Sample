@@ -17,7 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>XamlBrewer.Uwp.CalendarSample_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>XamlBrewer.Uwp.CalendarSample_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>A93B9FAE0D4965F5B7E7B7E29CECC37304CC3B58</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -117,6 +118,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="XamlBrewer.Uwp.CalendarSample_StoreKey.pfx" />
     <None Include="XamlBrewer.Uwp.CalendarSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +126,7 @@
     <Content Include="Assets\Toasts\Confused.png" />
     <Content Include="Assets\Toasts\Wink.png" />
     <Content Include="Assets\Toasts\Worried.png" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

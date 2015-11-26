@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="e36d17b5-98a1-4f06-853b-de90a09afad5" Publisher="CN=Diederik" Version="1.0.0.0" />
+  <Identity Name="34658BelgianBrewer.CalendarTest" Publisher="CN=B4909525-230B-4BDD-AAE9-129E9DEBF770" Version="1.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="e36d17b5-98a1-4f06-853b-de90a09afad5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>XamlBrewer.Uwp.CalendarSample</DisplayName>
-    <PublisherDisplayName>Diederik</PublisherDisplayName>
+    <DisplayName>Calendar_Test</DisplayName>
+    <PublisherDisplayName>Belgian Brewer</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

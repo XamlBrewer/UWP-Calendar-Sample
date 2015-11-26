@@ -60,7 +60,7 @@
             // Warning: you don't get an ID back with these:
             //appointment.Invitees.Add(new AppointmentInvitee());
             //appointment.Invitees[0].DisplayName = "Lucy van Pelt";
-            //appointment.Invitees[0].Address = "diederik@hotmail.be";
+            //appointment.Invitees[0].Address = "lucy@peanuts.com";
             //appointment.Organizer = new AppointmentOrganizer();
             //appointment.Organizer.DisplayName = "Lucy van Pelt";
             //appointment.Organizer.Address = "lucy@peanuts.com";

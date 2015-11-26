@@ -33,6 +33,9 @@
         public async static Task Display(string appointmentId)
         {
             await AppointmentManager.ShowAppointmentDetailsAsync(appointmentId);
+            // This would have been nice ...
+            //var store = await AppointmentManager.RequestStoreAsync(AppointmentStoreAccessType.AppCalendarsReadWrite);
+            //var appt = await store.GetAppointmentAsync(appointmentId);
         }
 
         public async static Task<bool> Delete(string appointmentId, bool ignoreExceptions = false)
